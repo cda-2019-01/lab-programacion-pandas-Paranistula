@@ -3,10 +3,9 @@
 ## de la tabla tbl0
 ## 
 import pandas as pd
-import numpy as np
-df = pd.read_csv("tbl0.tsv", sep="\t")
-df2 = df.copy()
 
-df2 = df2.groupby('_c1').max()['_c2']
+df0 = pd.read_csv("tbl0.tsv", sep="\t")
 
-print(df2)
+df0 = df0.groupby('_c1').max()['_c2']
+
+print(df0)
