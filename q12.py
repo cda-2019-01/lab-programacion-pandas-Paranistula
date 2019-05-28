@@ -5,7 +5,7 @@
 ## 
 import pandas as pd
 
-df2 = pd.read_csv('lab/tbl2.tsv', sep='\t')
+df2 = pd.read_csv('tbl2.tsv', sep='\t')
 
 df2 = df2.groupby('_c5a')['_c5b'].sum()
 
