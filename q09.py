@@ -4,6 +4,15 @@
 ## para el archivo tbl0.tsv
 ## 
 import pandas as pd
-import numpy as np
-df = pd.read_csv("tbl0.tsv", sep="\t")
 
+df0 = pd.read_csv("tbl0.tsv", sep="\t")
+
+dfaux = df0.groupby('_c1')['_c2'].apply(list)
+
+df = pd.DataFrame()
+df['_c0'] = dfaux.keys()
+df['lista'] = [elem for elem in dfaux]
+
+df['lista'] = [":".join(str(v) for v in sorted(elem)) for elem in df['lista']]
+
+print(df)
