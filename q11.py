@@ -6,7 +6,7 @@
 
 import pandas as pd
 
-df2 = pd.read_csv('lab/tbl2.tsv', sep='\t')
+df2 = pd.read_csv('tbl2.tsv', sep='\t')
 
 df2['_c5'] = df2['_c5a'] + ":" + df2['_c5b'].astype('str')
 
