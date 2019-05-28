@@ -5,5 +5,17 @@
 ## 
 
 import pandas as pd
-import numpy as np
-df = pd.read_csv("tbl0.tsv", sep="\t")
+
+df2 = pd.read_csv('lab/tbl2.tsv', sep='\t')
+
+df2['_c5'] = df2['_c5a'] + ":" + df2['_c5b'].astype('str')
+
+dfaux = df2.groupby('_c0')['_c5'].apply(list)
+
+df = pd.DataFrame()
+df['_c0'] = dfaux.keys()
+df['lista'] = [elem for elem in dfaux]
+
+df['lista'] = [",".join(str(v) for v in sorted(elem)) for elem in df['lista']]
+
+print(df)
