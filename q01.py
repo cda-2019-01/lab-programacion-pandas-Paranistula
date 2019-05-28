@@ -4,12 +4,8 @@
 ## 
 import pandas as pd
 
-import numpy as np
+df0 = pd.read_csv("tbl0.tsv", sep="\t")
 
-df = pd.read_csv("tbl0.tsv", sep="\t")
+df0 = df0.groupby('_c1').count()['_c0']
 
-df.groupby('_c1').count() 
-
-df.groupby('_c1').count()['_c0']
-
-print(df)
+print(df0)
