@@ -3,13 +3,14 @@
 ## de la tabla tbl1 en mayusculas
 ## 
 import pandas as pd
-import numpy as np
-df = pd.read_csv("tbl1.tsv", sep="\t")
 
-df2 = df.copy()
+df1 = pd.read_csv("tbl1.tsv", sep="\t")
 
-df2['_c4'] = df2['_c4'].str.upper()
+uniques = df1['_c4'].unique()
+res = []
+for elemt in uniques:
+    res.append(elemt.upper())
+res = sorted(res)
+res
 
-df2 = df2['_c4'].unique().sorted('_c4')
-
-print(df2)
+print(res)
