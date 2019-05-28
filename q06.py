@@ -3,5 +3,9 @@
 ## de la tabla tbl0
 ## 
 import pandas as pd
-import numpy as np
-df = pd.read_csv("tbl0.tsv", sep="\t")
+
+df0 = pd.read_csv("tbl0.tsv", sep="\t")
+
+df0 = df0.groupby('_c1').sum()['_c2']
+
+print(df0)
